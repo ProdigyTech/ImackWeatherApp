@@ -1,4 +1,4 @@
-<?php
+o<?php
 $textHolder= "Welcome to Isaac's Web Page";
 
 if (isset($_POST["submit"])){
