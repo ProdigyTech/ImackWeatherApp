@@ -4,15 +4,7 @@ $textHolder= "Welcome to Isaac's Web Page";
 if (isset($_POST["submit"])){
 
  $textHolder= $_POST["Infotainment"];
-
-
 }
-
-
-
-
-
-
 
 
 echo  "<h1>$textHolder</h1>";
