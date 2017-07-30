@@ -1,20 +1,19 @@
 <?php
 
 
-Echo "<h1>MackWeather</h1>";
+Echo "<h1>MackWeather Forcast</h1>";
 
 
 function displayWeather($data){
-  print_r($data);
-
-echo "Weather Status ". ($data['weather'][0]['main']);
-
-
+//  print_r($data);
+//echo "Weather Status ". ($data['weather'][0]['main']);
     echo "<div id=WeatherData>";
     echo "<h2>Viewing Weather for " . $data['name'] . " , " . $data['sys']['country'] . " </h2>";
     echo "<br />";
     echo "<h3>Current Conditions</h3>";
-
+    echo "<h4>" . strtoupper($data['weather'][0]['description']) . "</h4>";
+    echo "<h4>" . $data['main']['temp'] . " Degrees</h4>";
+    echo "</div>";
 }
 function parseWeather($weatherDataJson)
 {
@@ -32,12 +31,9 @@ function getWeather($zipcode){
     curl_close($curl);
     parseWeather($result);
 }
-
-
-
 if (isset($_POST['zipcode'])){
     $zipcode = $_POST['zipcode'];
-(getWeather($zipcode));
+    (getWeather($zipcode));
 }
 ?>
 
